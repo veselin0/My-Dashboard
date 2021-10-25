@@ -22,7 +22,7 @@ fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         console.log(data);
         document.body.style.backgroundImage = `url(${data.urls.full})`;
         const author = document.createElement('h3');
-        author.innerText = `By: ${data.user.name}`;
+        author.textContent = `By: ${data.user.name}`;
         document.body.append(author);
     });
  
