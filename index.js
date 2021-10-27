@@ -16,13 +16,13 @@
  * https://css-tricks.com/perfect-full-page-background-image/#awesome-easy-progressive-css3-way)
 */
 
+const author = document.querySelector('.author');
+
 fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
     .then(response => response.json())
     .then(data => {
         console.log(data);
         document.body.style.backgroundImage = `url(${data.urls.full})`;
-        const author = document.createElement('h3');
         author.textContent = `By: ${data.user.name}`;
-        document.body.append(author);
     });
  
