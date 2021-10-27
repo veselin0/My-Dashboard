@@ -18,11 +18,13 @@
 
 const author = document.querySelector('.author');
 
-fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
+fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=;hjksdf;kljsdfgl;kdsjfgljksdfglkjhsdfg')
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        document.body.style.backgroundImage = `url(${data.urls.full})`;
-        author.textContent = `By: ${data.user.name}`;
-    });
+        throw Error('I am an error!')
+        // document.body.style.backgroundImage = `url(${data.urls.full})`;
+        // author.textContent = `By: ${data.user.name}`;
+    })
+    .catch(err => console.log('Something went wrong!'));
  
