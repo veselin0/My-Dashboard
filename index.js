@@ -1,4 +1,6 @@
 const author = document.querySelector('.author');
+const cryptoName = document.querySelector('.name');
+const cryptoImg = document.querySelector('.crypto-img');
 
 fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
     .then(response => response.json())
@@ -15,6 +17,10 @@ fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
 fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+    console.log(data);
+    cryptoImg.src = `${data.image.small}`;
+    cryptoName.textContent = `${data.name}`;
+})
 .catch(err => console.error(err));    
 
