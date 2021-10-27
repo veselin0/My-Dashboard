@@ -14,7 +14,7 @@
  * (Note I've already added some CSS to resize the image within the window.
  * Instructions for this were found on CSS Tricks: 
  * https://css-tricks.com/perfect-full-page-background-image/#awesome-easy-progressive-css3-way)
-*/
+ */
 
 const author = document.querySelector('.author');
 
@@ -22,9 +22,10 @@ fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        throw Error('I am an error!')
-        // document.body.style.backgroundImage = `url(${data.urls.full})`;
-        // author.textContent = `By: ${data.user.name}`;
+
+        document.body.style.backgroundImage = `url(${data.urls.full})`;
+        author.textContent = `By: ${data.user.name}`;
     })
-    .catch(err => console.log('Something went wrong!'));
- 
+    .catch(err => {
+        document.body.style.backgroundImage = `url('https://images.unsplash.com/photo-1541788464282-8219dee793cc?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzUzMzk4NDQ&ixlib=rb-1.2.1&q=85')`;
+    });
