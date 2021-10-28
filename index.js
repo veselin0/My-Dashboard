@@ -30,3 +30,13 @@ fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
 })
 .catch(err => console.error(err));    
 
+// let hours = (new Date()).getHours();
+// let minutes = (new Date()).getMinutes();
+// let seconds = (new Date()).getSeconds();
+// console.log(`${hours}:${minutes}:${seconds}`);
+
+// let now = new Date();
+// console.log(now.toString());
+
+const date = new Date();
+console.log(date.toLocaleTimeString("en-gb"));
