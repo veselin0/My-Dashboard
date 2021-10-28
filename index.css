@@ -25,12 +25,38 @@ main {
 div.top {
     display: flex;
     justify-content: space-between;
+    
+}
+
+.crypto {
+    font-size: 1.3rem;
+    /* border: 3px dashed red; */
+    
 }
 
 .crypto-top {
-    /* border: 3px dashed red; */
+    /* border: 3px dashed green; */
     display: flex;
     justify-content: space-between;
+    
+}
+
+.crypto-bottom {
+    display: flex;
+    flex-direction: column;
+    /* border: 3px dashed blue; */
+}
+
+.price {
+    margin: 10px 5px 0px 5px;
+}
+
+.high {
+    margin: 0 0 0 10px;
+}
+
+.low {
+    margin: 0 0 0 10px;
 }
 
 .name {
