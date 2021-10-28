@@ -4,6 +4,7 @@ const cryptoImg = document.querySelector('.crypto-img');
 const cryptoPrice = document.querySelector('.price');
 const cryptoHigh = document.querySelector('.high');
 const cryptoLow = document.querySelector('.low');
+const clock = document.querySelector('.time');
 
 fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
     .then(response => response.json())
@@ -30,13 +31,9 @@ fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
 })
 .catch(err => console.error(err));    
 
-// let hours = (new Date()).getHours();
-// let minutes = (new Date()).getMinutes();
-// let seconds = (new Date()).getSeconds();
-// console.log(`${hours}:${minutes}:${seconds}`);
+const getCurrentTime = () => {
+    let date = new Date();
+    clock.textContent =  date.toLocaleTimeString("en-gb");
+};
 
-// let now = new Date();
-// console.log(now.toString());
-
-const date = new Date();
-console.log(date.toLocaleTimeString("en-gb"));
+setInterval(getCurrentTime, 1000);
