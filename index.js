@@ -6,11 +6,13 @@ const cryptoHigh = document.querySelector('.high');
 const cryptoLow = document.querySelector('.low');
 const clock = document.querySelector('.time');
 const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const locationName = document.querySelector('.location-name');
 
 fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         document.body.style.backgroundImage = `url(${data.urls.full})`;
         author.textContent = `By: ${data.user.name}`;
     })
@@ -23,7 +25,7 @@ fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         cryptoImg.src = `${data.image.small}`;
         cryptoName.textContent = `${data.name}`;
         cryptoPrice.textContent = `🎯: $${data.market_data.current_price.usd}`;
@@ -55,6 +57,8 @@ navigator.geolocation.getCurrentPosition(position => {
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             // console.log(iconUrl);
             weatherIcon.src = iconUrl;
+            temperature.textContent = `${Math.round(data.main.temp)}ºC`;
+            locationName.textContent = `${data.name}`;
         } )
         .catch(err => console.error(err));
 });
