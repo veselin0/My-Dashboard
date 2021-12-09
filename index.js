@@ -34,12 +34,12 @@ fetch('https://api.coingecko.com/api/v3/coins/dogecoin')
     })
     .catch(err => console.error(err));
 
-// const getCurrentTime = () => {
-//     let date = new Date();
-//     clock.textContent =  date.toLocaleTimeString("en-gb");
-// };
+const getCurrentTime = () => {
+    let date = new Date();
+    clock.textContent =  date.toLocaleTimeString("en-gb");
+};
 
-// setInterval(getCurrentTime, 1000);
+setInterval(getCurrentTime, 1000);
 
 const uri = 'https://apis.scrimba.com/openweathermap/data/2.5/weather'
 

@@ -66,6 +66,7 @@ div.top {
 h1.time {
     /* border: 3px dashed red; */
     text-align: center;
+    font-size: 72px;
 }
 
 div.weather {
